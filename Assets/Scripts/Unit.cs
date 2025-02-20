@@ -10,6 +10,11 @@ public class Unit : MonoBehaviour
     [SerializeField] private Animator unitAnimator;
     private Vector3 targetPosition;
 
+    private void Awake()
+    {
+        targetPosition = transform.position;
+    }
+
     private void Update()
     {
         if (Vector3.Distance(transform.position, targetPosition) > stoppingDistance)
@@ -26,16 +31,10 @@ public class Unit : MonoBehaviour
             unitAnimator.SetBool("IsWalking", false);
 
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            
-            Move(MouseWorld.GetPosition());
-        }
+        
     }
 
-
-    private void Move(Vector3 position)
+    public void Move(Vector3 position)
     {
         this.targetPosition = position;
     }
