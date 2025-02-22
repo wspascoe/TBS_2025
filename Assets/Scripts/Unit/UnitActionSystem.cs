@@ -5,10 +5,10 @@ public class UnitActionSystem : MonoBehaviour
 {
     [SerializeField] private Unit selectedUnit;
     [SerializeField] private LayerMask unitLayerMask;
+    public event EventHandler OnSelectedUnitChanged;
 
     public static UnitActionSystem Instance { get; private set; }
 
-    public event EventHandler OnSelectedUnitChanged;
 
     private void Awake()
     {
