@@ -26,6 +26,11 @@ public class GridObject
     {
         return this.units;
     }
+    
+    public bool HasAnyUnit()
+    {
+        return units.Count > 0;
+    }
 
     public override string ToString()
     {
