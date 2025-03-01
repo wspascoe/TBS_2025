@@ -39,6 +39,11 @@ public class MoveAction : BaseAction
         transform.forward = Vector3.Lerp(transform.forward, moveDirection, Time.deltaTime * rotateSpeed);
     }
     
+    public override string GetActionName()
+    {
+        return "Move";
+    }
+
     public void Move(GridPosition gridPosition, Action onActionComplete)
     {
         this.onActionComplete = onActionComplete;
